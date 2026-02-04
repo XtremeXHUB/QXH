@@ -194,3 +194,26 @@ iframe {
     margin: auto;
   }
 }
+
+/* Fixing Glow */
+.fixing {
+  color: #ff9f43;
+  text-shadow:
+    0 0 6px rgba(255,159,67,.8),
+    0 0 12px rgba(255,159,67,.6);
+  animation: fixingPulse 2s infinite alternate;
+}
+
+.fixing::before {
+  background: #ff9f43;
+  box-shadow: 0 0 10px rgba(255,159,67,.9);
+}
+
+@keyframes fixingPulse {
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: 1;
+  }
+}
