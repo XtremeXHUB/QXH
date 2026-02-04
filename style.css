@@ -229,3 +229,33 @@ body {
   0%,100% { opacity: 1; }
   50% { opacity: 0.3; }
 }
+
+.box {
+  position: relative;
+  overflow: hidden;
+}
+
+/* เส้นเรืองแสงด้านบน */
+.box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00ffd5, transparent);
+  animation: scan 3s linear infinite;
+}
+
+@keyframes scan {
+  to { left: 100%; }
+}
+
+/* Header เท่ขึ้น */
+.box-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Orbitron';
+  letter-spacing: 1px;
+}
