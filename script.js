@@ -1,34 +1,29 @@
+// ซ่อนรูปอัตโนมัติ ถ้าไฟล์ไม่มี
+document.querySelectorAll("img").forEach(img => {
+    img.onerror = () => {
+        img.style.display = "none";
+    };
+});
+
+// Tabs
+function openTab(tabId, btn) {
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+    btn.classList.add('active');
+}
+
 // Copy Script
 function copyScript(id, btn) {
     const text = document.getElementById(id).innerText;
     const old = btn.innerText;
-
     navigator.clipboard.writeText(text).then(() => {
         btn.innerText = "Copied ✅";
         setTimeout(() => btn.innerText = old, 1500);
     });
 }
 
-// Announcement slide
-let index = 0;
-const list = document.querySelectorAll(".announcement");
-
-if (list.length > 0) {
-    setInterval(() => {
-        list.forEach(a => a.classList.remove("active"));
-        index = (index + 1) % list.length;
-        list[index].classList.add("active");
-    }, 4000);
-}
-
-// Close Announcement
-function closeAnnouncement(e) {
-    e.stopPropagation();
-    document.querySelector(".announcement-box").style.display = "none";
-}
-
-// Auto Time
+// เวลา Announcement
 document.querySelectorAll(".time").forEach(el => {
-    const t = new Date(el.dataset.time);
-    el.innerText = t.toLocaleString("th-TH");
+    el.innerText = new Date(el.dataset.time).toLocaleString("th-TH");
 });
