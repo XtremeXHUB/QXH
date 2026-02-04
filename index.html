@@ -5,42 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>QXH HUB</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=40">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css?v=50">
 </head>
+
 <body onload="checkLogin()">
 
-<!-- 🔔 Announcement เลื่อนเรื่อย ๆ -->
+<!-- 🔔 Announcement -->
 <div class="announcement">
   <div class="announce-track">
     <span>📢 Script Main กำลัง Fix ระบบ</span>
-    <span>🚀 Script ใหม่จะเปิดในคลิปถัดไป</span>
-    <span>⚠️ ระบบ Login นี้เป็น Demo เท่านั้น</span>
-    <span>❌ ห้ามใช้รหัสจริง / เบอร์โทร</span>
+    <span>🚀 Script ใหม่กำลังพัฒนา</span>
+    <span>⚠️ Login นี้เป็น DEMO เท่านั้น</span>
+    <span>❌ ห้ามใช้รหัสจริง</span>
   </div>
 </div>
 
 <!-- 🔐 LOGIN -->
-<div class="login-box" id="loginBox">
-  <h2>🔐 Login</h2>
+<div class="login-wrapper" id="loginBox">
+  <div class="login-box">
+    <h2>🔐 QXH Login</h2>
 
-  <input type="text" id="username" placeholder="Username">
-  <input type="password" id="password" placeholder="Password">
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
 
-  <button onclick="login()">Login</button>
+    <button onclick="login()">Login</button>
 
-  <div class="warning">
-    ⚠️ คำเตือน (Warning)<br><br>
-    ระบบ Login นี้ทำขึ้นเพื่อสาธิตหน้าเว็บเท่านั้น<br>
-    ❌ ห้ามใช้ Password จริง, เบอร์โทรศัพท์, หรือรหัสเกม<br><br>
-    This login system is for DEMO purposes only.<br>
-    DO NOT use real passwords, phone numbers, or game credentials.
+    <div class="warning">
+      ⚠️ คำเตือน (Warning)<br><br>
+      ระบบนี้เป็นเพียงตัวอย่าง (DEMO)<br>
+      ❌ ห้ามใช้รหัสจริง / เบอร์โทร / รหัสเกม<br><br>
+      This login system is for demo only.<br>
+      Do NOT use real passwords or credentials.
+    </div>
   </div>
 </div>
 
-<!-- 🔥 HUB หลัก -->
-<div id="hub" style="display:none;">
+<!-- 🔥 HUB -->
+<div id="hub" class="hub">
 
+  <!-- Logout -->
+  <div class="top-bar">
+    <button class="logout" onclick="logout()">Logout</button>
+  </div>
+
+  <!-- Header -->
   <div class="header">
     <img src="images/logo.png" class="logo">
     <h1 class="title">QXH HUB</h1>
@@ -61,17 +72,8 @@
         🔥 Script Main
         <span class="status online">Online</span>
       </div>
-      <code id="s1">loadstring(game:HttpGet("https://example.com/script1.lua"))()</code>
+      <code id="s1">loadstring(game:HttpGet("https://example.com/script.lua"))()</code>
       <button class="btn" onclick="copyText('s1')">Copy Script</button>
-    </div>
-
-    <div class="box">
-      <div class="box-header">
-        ⚡ Script Extra
-        <span class="status fixing">Fixing</span>
-      </div>
-      <code id="s2">loadstring(game:HttpGet("https://example.com/script2.lua"))()</code>
-      <button class="btn" onclick="copyText('s2')">Copy Script</button>
     </div>
 
     <div class="box">
@@ -79,7 +81,7 @@
         ❌ Script Old
         <span class="status offline">Offline</span>
       </div>
-      <code>Script ปิดใช้งานชั่วคราว</code>
+      <code>Script ปิดใช้งาน</code>
       <button class="btn disabled" disabled>Unavailable</button>
     </div>
 
@@ -88,13 +90,13 @@
   <!-- Spoiler -->
   <div id="spoiler" class="tab-content fade">
     <div class="box">
-      <div class="box-header">🎬 Spoiler Script</div>
+      <div class="box-header">🎬 Spoiler</div>
       <p class="soon">Coming Soon 🔥</p>
     </div>
   </div>
 
 </div>
 
-<script src="script.js?v=40"></script>
+<script src="script.js?v=50"></script>
 </body>
 </html>
