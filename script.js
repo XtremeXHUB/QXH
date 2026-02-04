@@ -1,30 +1,33 @@
 function checkLogin() {
-  if (localStorage.getItem("qxh_logged_in") === "true") {
+  const logged = localStorage.getItem("qxh_logged_in");
+  if (logged === "true") {
     document.getElementById("loginBox").style.display = "none";
     document.getElementById("hub").style.display = "block";
   }
 }
 
 function login() {
-  const u = document.getElementById("username").value;
-  const p = document.getElementById("password").value;
+  const u = username.value;
+  const p = password.value;
 
   if (!u || !p) {
-    alert("กรุณากรอก Username และ Password");
+    alert("กรุณากรอกข้อมูล");
     return;
   }
 
-  // เซฟสถานะ Login (เล่น ๆ)
   localStorage.setItem("qxh_logged_in", "true");
-
   document.getElementById("loginBox").style.display = "none";
   document.getElementById("hub").style.display = "block";
 }
 
+function logout() {
+  localStorage.removeItem("qxh_logged_in");
+  location.reload();
+}
+
 function copyText(id) {
-  const text = document.getElementById(id).innerText;
-  navigator.clipboard.writeText(text);
-  alert("Copy Script แล้ว!");
+  navigator.clipboard.writeText(document.getElementById(id).innerText);
+  alert("Copy แล้ว!");
 }
 
 function openTab(id, btn) {
