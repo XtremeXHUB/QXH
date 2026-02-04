@@ -152,3 +152,29 @@ iframe {
     margin: auto;
   }
 }
+
+/* Online Glow Animation */
+.online {
+  color: #00ff7b;
+  text-shadow:
+    0 0 6px rgba(0,255,123,.9),
+    0 0 12px rgba(0,255,123,.8),
+    0 0 20px rgba(0,255,123,.7);
+  animation: onlinePulse 1.5s infinite alternate;
+}
+
+@keyframes onlinePulse {
+  from {
+    opacity: 0.6;
+    text-shadow:
+      0 0 4px rgba(0,255,123,.6),
+      0 0 10px rgba(0,255,123,.6);
+  }
+  to {
+    opacity: 1;
+    text-shadow:
+      0 0 8px rgba(0,255,123,1),
+      0 0 18px rgba(0,255,123,1),
+      0 0 30px rgba(0,255,123,.9);
+  }
+}
