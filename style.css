@@ -1,30 +1,85 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    margin: 0;
-    background: linear-gradient(135deg, #0a0a0a, #141414);
+    background: linear-gradient(135deg, #0a0a0a, #151515);
     font-family: Arial, sans-serif;
     color: white;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
 }
 
-.hub {
-    width: 100%;
+/* ===== Announcement ===== */
+.announcement-box {
+    position: relative;
+    background: linear-gradient(90deg, #ff9900, #ffcc00);
+    color: black;
+    padding: 14px;
+    border-radius: 14px;
+    margin-bottom: 20px;
     max-width: 420px;
+    width: 100%;
+}
+
+.announcement {
+    display: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.announcement.active {
+    display: block;
+}
+
+.announce-img {
+    width: 22px;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+.time {
+    display: block;
+    font-size: 11px;
+    opacity: 0.7;
+    margin-top: 4px;
+}
+
+.close-announcement {
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* ===== Hub ===== */
+.hub {
+    max-width: 420px;
+    width: 100%;
     background: #111;
     padding: 25px;
     border-radius: 18px;
-    box-shadow: 0 0 30px #00ffcc44;
+    box-shadow: 0 0 30px #00ffcc33;
+}
+
+.hub-logo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 10px;
+    box-shadow: 0 0 15px #00ffcc;
 }
 
 h1 {
     text-align: center;
     color: #00ffcc;
-    margin-bottom: 5px;
 }
 
 .subtitle {
@@ -34,23 +89,25 @@ h1 {
     margin-bottom: 20px;
 }
 
+/* ===== Script Box ===== */
 .script-box {
     background: #1b1b1b;
     padding: 15px;
     border-radius: 14px;
     margin-bottom: 18px;
-    animation: fadeUp 0.6s ease;
 }
 
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.script-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.script-img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 code {
@@ -64,41 +121,34 @@ code {
     margin-bottom: 12px;
 }
 
-button {
+/* ===== Status ===== */
+.status.online { color: #00ff66; }
+.status.patch { color: #ff3333; }
+.status.fix { color: #ffaa00; }
+
+/* ===== Button ===== */
+button.glow {
     width: 100%;
     padding: 12px;
     border-radius: 10px;
     border: none;
     font-weight: bold;
     cursor: pointer;
-}
-
-/* ปุ่มเรืองแสง */
-.glow {
     background: #00ffcc;
     color: #000;
-    box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc55;
-    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.glow:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 15px #00ffcc, 0 0 30px #00ffccaa;
-}
-
-/* วิดีโอ */
+/* ===== Video ===== */
 .video-box {
     position: relative;
     padding-top: 56.25%;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 0 15px #ff006655;
 }
 
 .video-box iframe {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
 }
@@ -106,26 +156,5 @@ button {
 .soon {
     text-align: center;
     color: #ff6699;
-    margin-top: 8px;
     font-size: 13px;
-}
-.script-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.status {
-    font-size: 13px;
-    font-weight: bold;
-}
-
-.status.online {
-    color: #00ff66;
-    text-shadow: 0 0 8px #00ff66;
-}
-
-.status.patch {
-    color: #ff3333;
-    text-shadow: 0 0 8px #ff3333;
 }
