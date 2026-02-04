@@ -11,6 +11,7 @@ function openTab(tabId, btn) {
   document.querySelectorAll('.tab')
     .forEach(b => b.classList.remove('active'));
 
-  document.getElementById(tabId).classList.add('active');
+  const tab = document.getElementById(tabId);
+  tab.classList.add('active', 'fade');
   btn.classList.add('active');
 }
