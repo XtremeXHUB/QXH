@@ -1,0 +1,52 @@
+body {
+  background: #0f0f0f;
+  color: white;
+  font-family: system-ui;
+  padding: 10px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.announcement {
+  background: #ffc400;
+  color: black;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+
+.close {
+  background: none;
+  border: none;
+  font-size: 18px;
+}
+
+.box {
+  background: #1b1b1b;
+  padding: 15px;
+  border-radius: 14px;
+  margin-top: 15px;
+}
+
+code {
+  display: block;
+  background: black;
+  padding: 10px;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: #00ffd5;
+}
+
+.fix { color: orange; }
+.online { color: #00ff7b; }
