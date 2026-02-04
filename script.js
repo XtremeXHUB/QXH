@@ -1,7 +1,7 @@
 function copyText(id) {
   const text = document.getElementById(id).innerText;
   navigator.clipboard.writeText(text);
-  alert("Copy แล้ว!");
+  alert("Copy Script แล้ว!");
 }
 
 function openTab(tabId, btn) {
