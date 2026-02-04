@@ -9,27 +9,132 @@ body {
     font-family: Arial, sans-serif;
     color: white;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
     padding: 20px;
 }
 
-/* ===== Announcement ===== */
+.hub {
+    max-width: 420px;
+    width: 100%;
+    background: #111;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 0 30px #00ffcc33;
+}
+
+.hub-logo {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 10px;
+    box-shadow: 0 0 15px #00ffcc;
+}
+
+h1 {
+    text-align: center;
+    color: #00ffcc;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 15px;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: #1f1f1f;
+    color: #aaa;
+    font-weight: bold;
+}
+
+.tab-btn.active {
+    background: #00ffcc;
+    color: #000;
+    box-shadow: 0 0 10px #00ffcc;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Script Box */
+.script-box {
+    background: #1b1b1b;
+    padding: 15px;
+    border-radius: 14px;
+    margin-bottom: 15px;
+}
+
+.script-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.script-img {
+    width: 100%;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+code {
+    display: block;
+    background: #000;
+    color: #00ffcc;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    margin-bottom: 10px;
+    word-break: break-all;
+}
+
+/* Status */
+.status.online { color: #00ff66; }
+.status.fix { color: #ffaa00; }
+.status.patch { color: #ff3333; }
+
+/* Button */
+.glow {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: #00ffcc;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Announcement */
 .announcement-box {
-    position: relative;
     background: linear-gradient(90deg, #ff9900, #ffcc00);
     color: black;
     padding: 14px;
     border-radius: 14px;
-    margin-bottom: 20px;
-    max-width: 420px;
-    width: 100%;
+    position: relative;
 }
 
 .announcement {
     display: none;
     font-weight: bold;
-    font-size: 14px;
 }
 
 .announcement.active {
@@ -53,23 +158,31 @@ body {
     position: absolute;
     top: 6px;
     right: 10px;
-    background: none;
     border: none;
+    background: none;
     cursor: pointer;
 }
 
-/* ===== Hub ===== */
-.hub {
-    max-width: 420px;
-    width: 100%;
-    background: #111;
-    padding: 25px;
-    border-radius: 18px;
-    box-shadow: 0 0 30px #00ffcc33;
+/* Video */
+.video-box {
+    position: relative;
+    padding-top: 56.25%;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
-.hub-logo {
-    width: 90px;
+.video-box iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.soon {
+    text-align: center;
+    color: #ff6699;
+    margin-top: 8px;
+}    width: 90px;
     height: 90px;
     border-radius: 50%;
     display: block;
@@ -158,3 +271,4 @@ button.glow {
     color: #ff6699;
     font-size: 13px;
 }
+
