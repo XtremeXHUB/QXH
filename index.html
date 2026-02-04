@@ -5,13 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>QXH HUB</title>
 
-  <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css?v=10">
+  <link rel="stylesheet" href="style.css?v=20">
 </head>
 <body>
+
+<!-- 🔔 Announcement -->
+<div class="announcement">
+  <div class="announce-track">
+    <span>📢 Script Main กำลัง Fix ระบบ</span>
+    <span>🚀 Script ใหม่จะเปิดในคลิปถัดไป</span>
+    <span>✅ Script Extra Online แล้ว!</span>
+  </div>
+</div>
 
 <!-- Header -->
 <div class="header">
@@ -22,71 +28,51 @@
 
 <!-- Tabs -->
 <div class="tabs">
-  <button class="tab active" onclick="openTab('tab-scripts', this)">Scripts</button>
-  <button class="tab" onclick="openTab('tab-spoiler', this)">Spoiler</button>
+  <button class="tab active" onclick="openTab('scripts', this)">Scripts</button>
+  <button class="tab" onclick="openTab('spoiler', this)">Spoiler</button>
 </div>
 
 <!-- Scripts -->
-<div id="tab-scripts" class="tab-content active">
+<div id="scripts" class="tab-content active fade">
 
-  <!-- Online -->
   <div class="box">
     <div class="box-header">
       🔥 Script Main
       <span class="status online">Online</span>
     </div>
-
-    <code id="script1">
-loadstring(game:HttpGet("https://example.com/script1.lua"))()
-    </code>
-
-    <button onclick="copyText('script1')">Copy Script</button>
+    <code id="s1">loadstring(game:HttpGet("https://example.com/script1.lua"))()</code>
+    <button class="btn" onclick="copyText('s1')">Copy Script</button>
   </div>
 
-  <!-- Fixing -->
   <div class="box">
     <div class="box-header">
       ⚡ Script Extra
       <span class="status fixing">Fixing</span>
     </div>
-
-    <code id="script2">
-loadstring(game:HttpGet("https://example.com/script2.lua"))()
-    </code>
-
-    <button onclick="copyText('script2')">Copy Script</button>
+    <code id="s2">loadstring(game:HttpGet("https://example.com/script2.lua"))()</code>
+    <button class="btn" onclick="copyText('s2')">Copy Script</button>
   </div>
 
-  <!-- Offline -->
   <div class="box">
     <div class="box-header">
       ❌ Script Old
       <span class="status offline">Offline</span>
     </div>
-
-    <code>
-Script ปิดใช้งานชั่วคราว
-    </code>
-
-    <button class="disabled" disabled>Unavailable</button>
+    <code>Script ปิดใช้งานชั่วคราว</code>
+    <button class="btn disabled" disabled>Unavailable</button>
   </div>
 
 </div>
 
 <!-- Spoiler -->
-<div id="tab-spoiler" class="tab-content">
+<div id="spoiler" class="tab-content fade">
   <div class="box">
     <div class="box-header">🎬 Spoiler Script</div>
-
-    <iframe
-      src="https://www.youtube.com/embed/VIDEO_ID"
-      allowfullscreen>
-    </iframe>
-
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
     <p class="soon">เร็ว ๆ นี้ 🔥</p>
   </div>
 </div>
 
-<script src="script.js?v=10"></script>
+<script src="script.js?v=20"></script>
 </body>
 </html>
