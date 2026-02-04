@@ -160,3 +160,72 @@ body {
   background: #334155;
   cursor: not-allowed;
 }
+
+/* ===== STATUS CORE ===== */
+.status {
+  font-weight: 600;
+  font-size: 13px;
+  margin-left: 8px;
+  position: relative;
+  padding-left: 14px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* จุดไฟ */
+.status::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ===== ONLINE (เขียววิบวับ) ===== */
+.status.online {
+  color: #22c55e;
+  text-shadow: 0 0 8px #22c55e;
+}
+
+.status.online::before {
+  background: #22c55e;
+  box-shadow: 0 0 8px #22c55e;
+  animation: pulseGreen 1.5s infinite;
+}
+
+/* ===== FIXING (เหลืองสั่นเบาๆ) ===== */
+.status.fixing {
+  color: #facc15;
+  text-shadow: 0 0 6px #facc15;
+}
+
+.status.fixing::before {
+  background: #facc15;
+  box-shadow: 0 0 8px #facc15;
+  animation: blink 1s infinite;
+}
+
+/* ===== OFFLINE (แดงนิ่ง ดูดุ) ===== */
+.status.offline {
+  color: #ef4444;
+  opacity: 0.85;
+}
+
+.status.offline::before {
+  background: #ef4444;
+  box-shadow: 0 0 6px #ef4444;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes pulseGreen {
+  0%   { box-shadow: 0 0 5px #22c55e; }
+  50%  { box-shadow: 0 0 16px #22c55e; }
+  100% { box-shadow: 0 0 5px #22c55e; }
+}
+
+@keyframes blink {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
