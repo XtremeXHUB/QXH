@@ -4,15 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>QXH HUB</title>
-  <link rel="stylesheet" href="style.css?v=3">
+
+  <!-- กันแคช -->
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
-
-<!-- Announcement -->
-<div class="announcement" id="announcement">
-  📢 Script Main กำลัง Fix ระบบ
-  <button onclick="closeAnn()">✕</button>
-</div>
 
 <!-- Header -->
 <div class="header">
@@ -27,38 +23,54 @@
   <button class="tab" onclick="openTab('spoiler', this)">Spoiler</button>
 </div>
 
-<!-- Scripts Tab -->
+<!-- Scripts TAB -->
 <div id="scripts" class="tab-content active">
 
+  <!-- Online -->
   <div class="box">
     <div class="box-header">
       🔥 Script Main
       <span class="status online">Online</span>
     </div>
 
-    <code id="script1">
+    <code id="s1">
 loadstring(game:HttpGet("https://example.com/script1.lua"))()
     </code>
 
-    <button onclick="copyText('script1')">Copy Script</button>
+    <button onclick="copyText('s1')">Copy Script</button>
   </div>
 
+  <!-- Fixing -->
   <div class="box">
     <div class="box-header">
       ⚡ Script Extra
       <span class="status fixing">Fixing</span>
     </div>
 
-    <code id="script2">
+    <code id="s2">
 loadstring(game:HttpGet("https://example.com/script2.lua"))()
     </code>
 
-    <button onclick="copyText('script2')">Copy Script</button>
+    <button onclick="copyText('s2')">Copy Script</button>
+  </div>
+
+  <!-- Offline -->
+  <div class="box">
+    <div class="box-header">
+      ❌ Script Old
+      <span class="status offline">Offline</span>
+    </div>
+
+    <code>
+Script ปิดใช้งานชั่วคราว
+    </code>
+
+    <button disabled class="disabled">Unavailable</button>
   </div>
 
 </div>
 
-<!-- Spoiler Tab -->
+<!-- Spoiler TAB -->
 <div id="spoiler" class="tab-content">
   <div class="box">
     <div class="box-header">🎬 Spoiler Script</div>
@@ -72,6 +84,6 @@ loadstring(game:HttpGet("https://example.com/script2.lua"))()
   </div>
 </div>
 
-<script src="script.js?v=3"></script>
+<script src="script.js?v=5"></script>
 </body>
 </html>
