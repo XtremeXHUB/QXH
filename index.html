@@ -1,59 +1,66 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>QXH Hub</title>
-<link rel="stylesheet" href="style.css">
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QXH HUB</title>
 
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css?v=1">
+</head>
 <body>
 
-<div class="announce">
-    <span>📢 Script Main กำลัง Fix ระบบ</span>
-    <button id="closeAnn">✕</button>
+<!-- Announcement -->
+<div class="announcement" id="announcement">
+  📢 Script Main กำลัง Fix ระบบ
+  <button onclick="closeAnn()">✕</button>
 </div>
 
-<div class="container">
-    <h1>QXH HUB</h1>
-    <p class="subtitle">Not Best Script But Cool 😎</p>
+<!-- Header -->
+<h1 class="title">QXH HUB</h1>
+<p class="subtitle">Not Best Script But Cool 😎</p>
 
-    <div class="tabs">
-        <button class="tab active" data-tab="scripts">Scripts</button>
-        <button class="tab" data-tab="spoiler">Spoiler</button>
-    </div>
+<!-- Script Main -->
+<div class="box">
+  <div class="box-header">
+    🔥 Script Main
+    <span class="status fixing">● Fixing</span>
+  </div>
 
-    <div class="page active" id="scripts">
+  <code id="script1">
+loadstring(game:HttpGet("https://example.com/script1.lua"))()
+  </code>
 
-        <div class="card">
-            <div class="card-head">
-                <h3>🔥 Script Main</h3>
-                <span class="status fix">● Fixing</span>
-            </div>
-            <code id="s1">loadstring(game:HttpGet("https://example.com/script1.lua"))()</code>
-            <button class="copy" data-copy="s1">Copy Script</button>
-        </div>
-
-        <div class="card">
-            <div class="card-head">
-                <h3>⚡ Script Extra</h3>
-                <span class="status online">● Online</span>
-            </div>
-            <code id="s2">loadstring(game:HttpGet("https://example.com/script2.lua"))()</code>
-            <button class="copy" data-copy="s2">Copy Script</button>
-        </div>
-
-    </div>
-
-    <div class="page" id="spoiler">
-        <div class="card">
-            <h3>🎬 Spoiler Script</h3>
-            <div class="video" id="video">▶ ดูคลิปสปอย</div>
-            <p class="soon">เร็ว ๆ นี้ 🔥</p>
-        </div>
-    </div>
+  <button onclick="copyText('script1')">Copy Script</button>
 </div>
 
-<script src="script.js"></script>
+<!-- Script Extra -->
+<div class="box">
+  <div class="box-header">
+    ⚡ Script Extra
+    <span class="status online">● Online</span>
+  </div>
+
+  <code id="script2">
+loadstring(game:HttpGet("https://example.com/script2.lua"))()
+  </code>
+
+  <button onclick="copyText('script2')">Copy Script</button>
+</div>
+
+<!-- Spoiler -->
+<div class="box">
+  <div class="box-header">🎬 Spoiler Script</div>
+
+  <iframe
+    src="https://www.youtube.com/embed/VIDEO_ID"
+    allowfullscreen>
+  </iframe>
+
+  <p class="soon">เร็ว ๆ นี้ 🔥</p>
+</div>
+
+<!-- JS -->
+<script src="script.js?v=1"></script>
 </body>
 </html>
