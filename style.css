@@ -1,68 +1,202 @@
-*{box-sizing:border-box;margin:0;padding:0}
-body{
-  background:linear-gradient(135deg,#0a0a0a,#151515);
-  font-family:Arial,sans-serif;color:#fff;
-  display:flex;justify-content:center;padding:20px
-}
-.hub{
-  max-width:420px;width:100%;
-  background:#111;padding:25px;border-radius:18px;
-  box-shadow:0 0 30px #00ffcc33
-}
-.hub-logo{
-  width:90px;height:90px;border-radius:50%;
-  display:block;margin:0 auto 10px;
-  box-shadow:0 0 15px #00ffcc
-}
-h1{text-align:center;color:#00ffcc}
-.subtitle{text-align:center;font-size:14px;color:#aaa;margin-bottom:15px}
-
-/* Tabs */
-.tabs{display:flex;gap:8px;margin-bottom:15px}
-.tab-btn{
-  flex:1;padding:10px;border:none;border-radius:10px;
-  background:#1f1f1f;color:#aaa;font-weight:bold;cursor:pointer
-}
-.tab-btn.active{
-  background:#00ffcc;color:#000;box-shadow:0 0 10px #00ffcc
-}
-.tab-content{display:none}
-.tab-content.active{display:block}
-
-/* Script */
-.script-box{
-  background:#1b1b1b;padding:15px;border-radius:14px;margin-bottom:15px
-}
-.script-header{
-  display:flex;justify-content:space-between;align-items:center
-}
-.script-img{width:100%;border-radius:10px;margin:10px 0}
-code{
-  display:block;background:#000;color:#00ffcc;
-  padding:10px;border-radius:8px;font-size:12px;
-  word-break:break-all;margin-bottom:10px
-}
-.status.online{color:#00ff66}
-.status.fix{color:#ffaa00}
-.status.patch{color:#ff3333}
-
-/* Button */
-.glow{
-  width:100%;padding:12px;border:none;border-radius:10px;
-  background:#00ffcc;color:#000;font-weight:bold;cursor:pointer
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* Announcement */
-.announcement-box{
-  background:linear-gradient(90deg,#ff9900,#ffcc00);
-  color:#000;padding:14px;border-radius:14px
+body {
+  background: radial-gradient(circle at top, #0f2f2a, #050505 60%);
+  font-family: Arial, sans-serif;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
 }
-.announcement{display:none;font-weight:bold}
-.announcement.active{display:block}
-.announce-img{width:22px;vertical-align:middle;margin-right:6px}
-.time{display:block;font-size:11px;opacity:.7;margin-top:4px}
 
-/* Video */
-.video-box{position:relative;padding-top:56.25%;border-radius:12px;overflow:hidden}
-.video-box iframe{position:absolute;inset:0;width:100%;height:100%}
-.soon{text-align:center;color:#ff6699;margin-top:8px}
+.hub {
+  width: 100%;
+  max-width: 420px;
+  background: #0f0f0f;
+  padding: 22px;
+  border-radius: 22px;
+  box-shadow: 0 0 40px #00ffcc22;
+}
+
+/* ===== Logo ===== */
+.hub-logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 10px;
+  box-shadow: 0 0 25px #00ffcc;
+}
+
+h1 {
+  text-align: center;
+  color: #00ffcc;
+  font-size: 26px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 18px;
+}
+
+/* ===== Tabs ===== */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: none;
+  background: #2a2a2a;
+  color: #ccc;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  background: #00ffcc;
+  color: #000;
+  box-shadow: 0 0 10px #00ffcc;
+}
+
+/* ===== Tab Content ===== */
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: block;
+}
+
+/* ===== Script Card ===== */
+.script-box {
+  background: linear-gradient(180deg, #1c1c1c, #141414);
+  padding: 16px;
+  border-radius: 18px;
+  margin-bottom: 20px;
+  box-shadow: 0 12px 30px #000000aa;
+}
+
+.script-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.script-header h2 {
+  font-size: 20px;
+}
+
+/* ===== Status ===== */
+.status {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.status.online {
+  color: #00ff66;
+  text-shadow: 0 0 8px #00ff66;
+}
+
+.status.fix {
+  color: #ffaa00;
+  text-shadow: 0 0 8px #ffaa00;
+}
+
+.status.patch {
+  color: #ff3333;
+  text-shadow: 0 0 8px #ff3333;
+}
+
+/* ===== Code ===== */
+code {
+  display: block;
+  background: #000;
+  color: #00ffcc;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  word-break: break-all;
+  margin-bottom: 14px;
+}
+
+/* ===== Button ===== */
+.glow {
+  width: 100%;
+  padding: 14px;
+  border-radius: 16px;
+  border: none;
+  background: #00ffcc;
+  color: #000;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 18px #00ffcc;
+  transition: 0.25s;
+}
+
+.glow:hover {
+  box-shadow: 0 0 28px #00ffcc;
+  transform: scale(1.02);
+}
+
+/* ===== Announcement ===== */
+.announcement-box {
+  background: linear-gradient(90deg, #ffb300, #ffcc00);
+  color: #000;
+  padding: 16px;
+  border-radius: 18px;
+  font-weight: bold;
+  box-shadow: 0 10px 25px #00000070;
+}
+
+.announcement {
+  display: none;
+}
+.announcement.active {
+  display: block;
+}
+
+.time {
+  display: block;
+  font-size: 12px;
+  opacity: 0.75;
+  margin-top: 6px;
+}
+
+/* ===== Video ===== */
+.video-box {
+  position: relative;
+  padding-top: 56.25%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px #000;
+}
+
+.video-box iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.soon {
+  text-align: center;
+  margin-top: 10px;
+  color: #ff6666;
+}
+
+/* ===== Image safe ===== */
+img {
+  max-width: 100%;
+}
