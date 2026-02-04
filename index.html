@@ -1,85 +1,57 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QXH Hub</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QXH Hub</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+<div class="announcement-box">
+    <div class="announcement active">📢 Script Main กำลัง Fix ระบบ</div>
+    <div class="announcement">🚀 Script ใหม่กำลังมา</div>
+    <div class="announcement">✅ Script Extra Online แล้ว</div>
+    <button class="close-announcement">✕</button>
+</div>
+
 <div class="hub">
+    <h1>QXH HUB</h1>
+    <p class="subtitle">Not Best Script But Cool 😎</p>
 
-  <!-- Logo (ไม่มีรูปก็ไม่พัง) -->
-  <img src="images/logo.png" class="hub-logo">
-
-  <h1>QXH HUB</h1>
-  <p class="subtitle">Not Best Script But Cool 😎</p>
-
-  <!-- Tabs -->
-  <div class="tabs">
-    <button class="tab-btn active" onclick="openTab('scripts', this)">🧩 Scripts</button>
-    <button class="tab-btn" onclick="openTab('announce', this)">📢 Announce</button>
-    <button class="tab-btn" onclick="openTab('spoiler', this)">🎬 Spoiler</button>
-  </div>
-
-  <!-- Scripts -->
-  <div class="tab-content active" id="scripts">
-
-    <div class="script-box">
-      <div class="script-header">
-        <h2>🔥 Script Main</h2>
-        <span class="status online">● Online</span>
-      </div>
-
-      <img src="images/script1.jpg" class="script-img">
-
-      <code id="s1">
-loadstring(game:HttpGet("https://example.com/script1.lua"))()
-      </code>
-
-      <button class="glow" onclick="copyScript('s1', this)">Copy Script</button>
+    <div class="tabs">
+        <button class="tab-btn active" data-tab="scripts">Scripts</button>
+        <button class="tab-btn" data-tab="spoiler">Spoiler</button>
     </div>
 
-    <div class="script-box">
-      <div class="script-header">
-        <h2>⚔️ Script Extra</h2>
-        <span class="status fix">● Fixing</span>
-      </div>
+    <div class="tab-content active" id="scripts">
+        <div class="script-box">
+            <div class="script-header">
+                <h3>🔥 Script Main</h3>
+                <span class="status fix">● Fixing</span>
+            </div>
+            <code id="s1">loadstring(game:HttpGet("https://example.com/script1.lua"))()</code>
+            <button class="glow" data-copy="s1">Copy Script</button>
+        </div>
 
-      <img src="images/script2.jpg" class="script-img">
-
-      <code id="s2">
-loadstring(game:HttpGet("https://example.com/script2.lua"))()
-      </code>
-
-      <button class="glow" onclick="copyScript('s2', this)">Copy Script</button>
+        <div class="script-box">
+            <div class="script-header">
+                <h3>⚡ Script Extra</h3>
+                <span class="status online">● Online</span>
+            </div>
+            <code id="s2">loadstring(game:HttpGet("https://example.com/script2.lua"))()</code>
+            <button class="glow" data-copy="s2">Copy Script</button>
+        </div>
     </div>
 
-  </div>
-
-  <!-- Announcement -->
-  <div class="tab-content" id="announce">
-    <div class="announcement-box">
-      <div class="announcement active">
-        <img src="images/announce.png" class="announce-img">
-        Script Main กำลัง Fix ระบบ
-        <span class="time" data-time="2026-02-04T18:30:00"></span>
-      </div>
+    <div class="tab-content" id="spoiler">
+        <div class="script-box">
+            <h3>🎬 Spoiler Script</h3>
+            <div class="video-thumb">▶ ดูคลิปสปอย</div>
+            <p class="soon">เร็ว ๆ นี้ 🔥</p>
+        </div>
     </div>
-  </div>
-
-  <!-- Spoiler -->
-  <div class="tab-content" id="spoiler">
-    <div class="script-box">
-      <h2>🎬 Spoiler Script</h2>
-      <div class="video-box">
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
-      </div>
-      <p class="soon">เร็ว ๆ นี้ 🔥</p>
-    </div>
-  </div>
-
 </div>
 
 <script src="script.js"></script>
