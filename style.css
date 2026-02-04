@@ -110,13 +110,16 @@ body {
   to { opacity: 1; }
 }
 
-/* 🔴 Offline */
+/* 🔴 Offline (นิ่ง แต่มี glow เบา ๆ) */
 .offline {
   color: #ff4d4d;
+  opacity: 0.75;
+  text-shadow: 0 0 6px rgba(255,77,77,.6);
 }
+
 .offline::before {
   background: #ff4d4d;
-  box-shadow: 0 0 8px rgba(255,77,77,.6);
+  box-shadow: 0 0 8px rgba(255,77,77,.7);
 }
 
 /* Code */
