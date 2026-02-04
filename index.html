@@ -5,8 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>QXH HUB</title>
 
-  <!-- กันแคช -->
-  <link rel="stylesheet" href="style.css?v=5">
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css?v=10">
 </head>
 <body>
 
@@ -19,12 +22,12 @@
 
 <!-- Tabs -->
 <div class="tabs">
-  <button class="tab active" onclick="openTab('scripts', this)">Scripts</button>
-  <button class="tab" onclick="openTab('spoiler', this)">Spoiler</button>
+  <button class="tab active" onclick="openTab('tab-scripts', this)">Scripts</button>
+  <button class="tab" onclick="openTab('tab-spoiler', this)">Spoiler</button>
 </div>
 
-<!-- Scripts TAB -->
-<div id="scripts" class="tab-content active">
+<!-- Scripts -->
+<div id="tab-scripts" class="tab-content active">
 
   <!-- Online -->
   <div class="box">
@@ -33,11 +36,11 @@
       <span class="status online">Online</span>
     </div>
 
-    <code id="s1">
+    <code id="script1">
 loadstring(game:HttpGet("https://example.com/script1.lua"))()
     </code>
 
-    <button onclick="copyText('s1')">Copy Script</button>
+    <button onclick="copyText('script1')">Copy Script</button>
   </div>
 
   <!-- Fixing -->
@@ -47,11 +50,11 @@ loadstring(game:HttpGet("https://example.com/script1.lua"))()
       <span class="status fixing">Fixing</span>
     </div>
 
-    <code id="s2">
+    <code id="script2">
 loadstring(game:HttpGet("https://example.com/script2.lua"))()
     </code>
 
-    <button onclick="copyText('s2')">Copy Script</button>
+    <button onclick="copyText('script2')">Copy Script</button>
   </div>
 
   <!-- Offline -->
@@ -65,13 +68,13 @@ loadstring(game:HttpGet("https://example.com/script2.lua"))()
 Script ปิดใช้งานชั่วคราว
     </code>
 
-    <button disabled class="disabled">Unavailable</button>
+    <button class="disabled" disabled>Unavailable</button>
   </div>
 
 </div>
 
-<!-- Spoiler TAB -->
-<div id="spoiler" class="tab-content">
+<!-- Spoiler -->
+<div id="tab-spoiler" class="tab-content">
   <div class="box">
     <div class="box-header">🎬 Spoiler Script</div>
 
@@ -84,6 +87,6 @@ Script ปิดใช้งานชั่วคราว
   </div>
 </div>
 
-<script src="script.js?v=5"></script>
+<script src="script.js?v=10"></script>
 </body>
 </html>
