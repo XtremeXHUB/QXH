@@ -5,26 +5,38 @@ body {
   color: #fff;
 }
 
+/* 🔔 Announcement */
+.announcement {
+  overflow: hidden;
+  background: #000;
+  border-bottom: 1px solid #00ffd5;
+}
+.announce-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 18s linear infinite;
+}
+.announce-track span {
+  padding: 8px 40px;
+  white-space: nowrap;
+  color: #00ffd5;
+}
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
 /* Header */
 .header {
   text-align: center;
   margin-top: 15px;
 }
-
 .logo {
   width: 90px;
-  filter: drop-shadow(0 0 18px rgba(0,255,213,.9));
+  filter: drop-shadow(0 0 18px #00ffd5);
 }
-
 .title {
-  font-size: 28px;
-  text-shadow:
-    0 0 10px rgba(0,255,213,.8),
-    0 0 20px rgba(0,255,213,.4);
-}
-
-.subtitle {
-  opacity: .7;
+  text-shadow: 0 0 12px rgba(0,255,213,.9);
 }
 
 /* Tabs */
@@ -34,30 +46,39 @@ body {
   gap: 12px;
   margin: 20px;
 }
-
 .tab {
   padding: 10px 20px;
   border-radius: 25px;
-  border: none;
   background: #111;
   color: #fff;
+  border: none;
   cursor: pointer;
-  font-weight: 600;
+  transition: transform .15s, box-shadow .15s;
 }
-
+.tab:hover {
+  transform: translateY(-2px);
+}
+.tab:active {
+  transform: scale(.95);
+}
 .tab.active {
   background: linear-gradient(90deg,#00ffd5,#00aaff);
   color: #000;
-  box-shadow: 0 0 18px rgba(0,255,213,.9);
+  box-shadow: 0 0 18px #00ffd5;
+}
+
+/* Fade effect */
+.fade {
+  animation: fadeIn .35s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
 }
 
 /* Content */
-.tab-content {
-  display: none;
-}
-.tab-content.active {
-  display: block;
-}
+.tab-content { display: none; }
+.tab-content.active { display: block; }
 
 /* Box */
 .box {
@@ -68,15 +89,7 @@ body {
   box-shadow: 0 0 25px rgba(0,255,213,.15);
 }
 
-.box-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-weight: 600;
-  text-shadow: 0 0 6px rgba(255,255,255,.25);
-}
-
-/* Status base */
+/* Status */
 .status {
   display: flex;
   align-items: center;
@@ -92,69 +105,65 @@ body {
 /* Online */
 .online {
   color: #00ff88;
-  animation: onlineBlink 1s infinite alternate;
+  animation: blink 1s infinite alternate;
 }
 .online::before {
   background: #00ff88;
   box-shadow: 0 0 12px #00ff88;
 }
 
-@keyframes onlineBlink {
-  from { opacity: .6; }
-  to { opacity: 1; }
-}
-
 /* Fixing */
 .fixing {
   color: #ff9f43;
-  animation: fixingBlink 2s infinite alternate;
+  animation: blink 2s infinite alternate;
 }
 .fixing::before {
   background: #ff9f43;
   box-shadow: 0 0 10px #ff9f43;
 }
 
-@keyframes fixingBlink {
-  from { opacity: .5; }
-  to { opacity: 1; }
-}
-
-/* Offline (แก้แล้ว) */
+/* Offline */
 .offline {
   color: #ff4d4d;
   opacity: .75;
-  text-shadow: 0 0 6px rgba(255,77,77,.6);
 }
 .offline::before {
   background: #ff4d4d;
   box-shadow: 0 0 8px rgba(255,77,77,.7);
 }
 
-/* Code */
+@keyframes blink {
+  from { opacity: .5; }
+  to { opacity: 1; }
+}
+
+/* Code + Button */
 code {
   display: block;
   background: #000;
   padding: 10px;
   border-radius: 12px;
   margin: 10px 0;
-  font-size: 13px;
 }
-
-/* Buttons */
-button {
+.btn {
   width: 100%;
   padding: 10px;
   border-radius: 12px;
   border: none;
   background: linear-gradient(90deg,#00ffd5,#00aaff);
-  font-weight: 600;
   cursor: pointer;
+  transition: transform .15s, box-shadow .15s;
 }
-
-button.disabled {
+.btn:hover {
+  box-shadow: 0 0 18px #00ffd5;
+}
+.btn:active {
+  transform: scale(.96);
+}
+.btn.disabled {
   background: #333;
   cursor: not-allowed;
-  color: #777;
+  box-shadow: none;
 }
 
 /* Video */
