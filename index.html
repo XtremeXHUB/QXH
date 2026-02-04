@@ -8,39 +8,79 @@
 </head>
 <body>
 
+<!-- ===== Announcement ===== -->
+<div class="announcement-box">
+    <div class="announcement active">
+        <img src="images/announce.png" class="announce-img">
+        Script Main กำลัง Fix ระบบ
+        <span class="time" data-time="2026-02-04T18:30:00"></span>
+    </div>
+
+    <div class="announcement">
+        🚀 Script ใหม่จะเปิดในคลิปถัดไป
+        <span class="time" data-time="2026-02-03T21:00:00"></span>
+    </div>
+
+    <button class="close-announcement" onclick="closeAnnouncement(event)">✕</button>
+</div>
+
+<!-- ===== Hub ===== -->
 <div class="hub">
+
+    <!-- Logo -->
+    <img src="images/logo.png" class="hub-logo" alt="QXH Hub">
+
     <h1>QXH HUB</h1>
     <p class="subtitle">Not Best Script But Cool 😎</p>
 
-    <!-- Script 1 -->
-<div class="script-box">
-    <div class="script-header">
-        <h2>🔥 Script Main</h2>
-        <span class="status online">● Online</span>
-    </div>
-
-    <code id="script1">loadstring(game:HttpGet("https://example.com/script1.lua"))()</code>
-    <button class="glow" onclick="copyScript('script1', this)">Copy Script</button>
-</div>
-
-    <!-- Script 2 -->
+    <!-- Script Main -->
     <div class="script-box">
-        <h2>⚔️ Script Extra</h2>
-        <code id="script2">loadstring(game:HttpGet("https://example.com/script2.lua"))()</code>
-        <button class="glow" onclick="copyScript('script2', this)">Copy Script</button>
+        <div class="script-header">
+            <h2>🔥 Script Main</h2>
+            <span class="status fix">● Fixing</span>
+        </div>
+
+        <img src="images/script1.jpg" class="script-img">
+
+        <code id="script-main">
+loadstring(game:HttpGet("https://example.com/script1.lua"))()
+        </code>
+
+        <button class="glow" onclick="copyScript('script-main', this)">
+            Copy Script
+        </button>
     </div>
 
-    <!-- Spoiler Video -->
+    <!-- Script Extra -->
+    <div class="script-box">
+        <div class="script-header">
+            <h2>⚔️ Script Extra</h2>
+            <span class="status online">● Online</span>
+        </div>
+
+        <img src="images/script2.jpg" class="script-img">
+
+        <code id="script-extra">
+loadstring(game:HttpGet("https://example.com/script2.lua"))()
+        </code>
+
+        <button class="glow" onclick="copyScript('script-extra', this)">
+            Copy Script
+        </button>
+    </div>
+
+    <!-- Spoiler -->
     <div class="script-box">
         <h2>🎬 Spoiler Script (Coming Soon)</h2>
+
         <div class="video-box">
-            <!-- ใส่ลิงก์ YouTube ของเธอ -->
-            <iframe 
+            <iframe
                 src="https://www.youtube.com/embed/VIDEO_ID"
                 frameborder="0"
                 allowfullscreen>
             </iframe>
         </div>
+
         <p class="soon">เร็ว ๆ นี้ 🔥</p>
     </div>
 
