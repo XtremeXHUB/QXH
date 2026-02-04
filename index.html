@@ -6,73 +6,95 @@
   <title>QXH HUB</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=20">
+  <link rel="stylesheet" href="style.css?v=40">
 </head>
-<body>
+<body onload="checkLogin()">
 
-<!-- 🔔 Announcement -->
+<!-- 🔔 Announcement เลื่อนเรื่อย ๆ -->
 <div class="announcement">
   <div class="announce-track">
-    <span> My script might lag a bit, but I’ll try to make it as lag-free as possible.</span>
-    <span> Not the best script, but I fix it sometimes.</span>
-    <span> Not a bad script, not a great one either 😆</span>
+    <span>📢 Script Main กำลัง Fix ระบบ</span>
+    <span>🚀 Script ใหม่จะเปิดในคลิปถัดไป</span>
+    <span>⚠️ ระบบ Login นี้เป็น Demo เท่านั้น</span>
+    <span>❌ ห้ามใช้รหัสจริง / เบอร์โทร</span>
   </div>
 </div>
 
-<!-- Header -->
-<div class="header">
-  <img src="images/logo.png" class="logo">
-  <h1 class="title">QXH HUB</h1>
-  <p class="subtitle">Not Best Script But Cool 😎</p>
+<!-- 🔐 LOGIN -->
+<div class="login-box" id="loginBox">
+  <h2>🔐 Login</h2>
+
+  <input type="text" id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
+
+  <button onclick="login()">Login</button>
+
+  <div class="warning">
+    ⚠️ คำเตือน (Warning)<br><br>
+    ระบบ Login นี้ทำขึ้นเพื่อสาธิตหน้าเว็บเท่านั้น<br>
+    ❌ ห้ามใช้ Password จริง, เบอร์โทรศัพท์, หรือรหัสเกม<br><br>
+    This login system is for DEMO purposes only.<br>
+    DO NOT use real passwords, phone numbers, or game credentials.
+  </div>
 </div>
 
-<!-- Tabs -->
-<div class="tabs">
-  <button class="tab active" onclick="openTab('scripts', this)">Scripts</button>
-  <button class="tab" onclick="openTab('spoiler', this)">Spoiler</button>
-</div>
+<!-- 🔥 HUB หลัก -->
+<div id="hub" style="display:none;">
 
-<!-- Scripts -->
-<div id="scripts" class="tab-content active fade">
+  <div class="header">
+    <img src="images/logo.png" class="logo">
+    <h1 class="title">QXH HUB</h1>
+    <p class="subtitle">Not Best Script But Cool 😎</p>
+  </div>
 
-  <div class="box">
-    <div class="box-header">
-      🔥 Ultra: Rebirth
-      <span class="status online">Online</span>
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab active" onclick="openTab('scripts', this)">Scripts</button>
+    <button class="tab" onclick="openTab('spoiler', this)">Spoiler</button>
+  </div>
+
+  <!-- Scripts -->
+  <div id="scripts" class="tab-content active fade">
+
+    <div class="box">
+      <div class="box-header">
+        🔥 Script Main
+        <span class="status online">Online</span>
+      </div>
+      <code id="s1">loadstring(game:HttpGet("https://example.com/script1.lua"))()</code>
+      <button class="btn" onclick="copyText('s1')">Copy Script</button>
     </div>
-    <code id="s1">loadstring(game:HttpGet("https://pastebin.com/raw/0HZN0gCy"))()</code>
-    <button class="btn" onclick="copyText('s1')">Copy Script</button>
+
+    <div class="box">
+      <div class="box-header">
+        ⚡ Script Extra
+        <span class="status fixing">Fixing</span>
+      </div>
+      <code id="s2">loadstring(game:HttpGet("https://example.com/script2.lua"))()</code>
+      <button class="btn" onclick="copyText('s2')">Copy Script</button>
+    </div>
+
+    <div class="box">
+      <div class="box-header">
+        ❌ Script Old
+        <span class="status offline">Offline</span>
+      </div>
+      <code>Script ปิดใช้งานชั่วคราว</code>
+      <button class="btn disabled" disabled>Unavailable</button>
+    </div>
+
   </div>
 
-  <div class="box">
-    <div class="box-header">
-      ❌ Script Not Open
-      <span class="status offline">Offline</span>
+  <!-- Spoiler -->
+  <div id="spoiler" class="tab-content fade">
+    <div class="box">
+      <div class="box-header">🎬 Spoiler Script</div>
+      <p class="soon">Coming Soon 🔥</p>
     </div>
-    <code>Script ยังไม่มี</code>
-    <button class="btn disabled" disabled>Unavailable</button>
-  </div>
-
-  <div class="box">
-    <div class="box-header">
-      ❌ Script Not Open
-      <span class="status offline">Offline</span>
-    </div>
-    <code>Script ยังไม่มี</code>
-    <button class="btn disabled" disabled>Unavailable</button>
   </div>
 
 </div>
 
-<!-- Spoiler -->
-<div id="spoiler" class="tab-content fade">
-  <div class="box">
-    <div class="box-header">🎬 Spoiler Script</div>
-    <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
-    <p class="soon">เร็ว ๆ นี้ 🔥</p>
-  </div>
-</div>
-
-<script src="script.js?v=20"></script>
+<script src="script.js?v=40"></script>
 </body>
 </html>
