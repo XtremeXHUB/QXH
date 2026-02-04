@@ -9,46 +9,46 @@
 
 <body>
 
-<div class="announcement-box">
-    <div class="announcement active">📢 Script Main กำลัง Fix ระบบ</div>
-    <div class="announcement">🚀 Script ใหม่กำลังมา</div>
-    <div class="announcement">✅ Script Extra Online แล้ว</div>
-    <button class="close-announcement">✕</button>
+<div class="announce">
+    <span>📢 Script Main กำลัง Fix ระบบ</span>
+    <button id="closeAnn">✕</button>
 </div>
 
-<div class="hub">
+<div class="container">
     <h1>QXH HUB</h1>
     <p class="subtitle">Not Best Script But Cool 😎</p>
 
     <div class="tabs">
-        <button class="tab-btn active" data-tab="scripts">Scripts</button>
-        <button class="tab-btn" data-tab="spoiler">Spoiler</button>
+        <button class="tab active" data-tab="scripts">Scripts</button>
+        <button class="tab" data-tab="spoiler">Spoiler</button>
     </div>
 
-    <div class="tab-content active" id="scripts">
-        <div class="script-box">
-            <div class="script-header">
+    <div class="page active" id="scripts">
+
+        <div class="card">
+            <div class="card-head">
                 <h3>🔥 Script Main</h3>
                 <span class="status fix">● Fixing</span>
             </div>
             <code id="s1">loadstring(game:HttpGet("https://example.com/script1.lua"))()</code>
-            <button class="glow" data-copy="s1">Copy Script</button>
+            <button class="copy" data-copy="s1">Copy Script</button>
         </div>
 
-        <div class="script-box">
-            <div class="script-header">
+        <div class="card">
+            <div class="card-head">
                 <h3>⚡ Script Extra</h3>
                 <span class="status online">● Online</span>
             </div>
             <code id="s2">loadstring(game:HttpGet("https://example.com/script2.lua"))()</code>
-            <button class="glow" data-copy="s2">Copy Script</button>
+            <button class="copy" data-copy="s2">Copy Script</button>
         </div>
+
     </div>
 
-    <div class="tab-content" id="spoiler">
-        <div class="script-box">
+    <div class="page" id="spoiler">
+        <div class="card">
             <h3>🎬 Spoiler Script</h3>
-            <div class="video-thumb">▶ ดูคลิปสปอย</div>
+            <div class="video" id="video">▶ ดูคลิปสปอย</div>
             <p class="soon">เร็ว ๆ นี้ 🔥</p>
         </div>
     </div>
