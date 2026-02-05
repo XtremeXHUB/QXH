@@ -5,25 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>QXH HUB</title>
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=50">
+  <link rel="stylesheet" href="style.css?v=1">
 </head>
 
 <body onload="checkLogin()">
 
-<!-- 🔔 Announcement -->
 <div class="announcement">
   <div class="announce-track">
-    <span>📢 Script Main กำลัง Fix ระบบ</span>
-    <span>🚀 Script ใหม่กำลังพัฒนา</span>
+    <span>📢 QXH HUB เปิดให้ใช้งานแล้ว</span>
+    <span>🛠 Script Main กำลัง Fix ระบบ</span>
+    <span>🚧 Script ใหม่กำลังพัฒนา</span>
     <span>⚠️ Login นี้เป็น DEMO เท่านั้น</span>
-    <span>❌ ห้ามใช้รหัสจริง</span>
+    <span>❌ ห้ามใช้รหัสจริง / เบอร์ / รหัสเกม</span>
   </div>
 </div>
 
-<!-- 🔐 LOGIN -->
+
 <div class="login-wrapper" id="loginBox">
   <div class="login-box">
     <h2>🔐 QXH Login</h2>
@@ -37,66 +36,114 @@
       ⚠️ คำเตือน (Warning)<br><br>
       ระบบนี้เป็นเพียงตัวอย่าง (DEMO)<br>
       ❌ ห้ามใช้รหัสจริง / เบอร์โทร / รหัสเกม<br><br>
-      This login system is for demo only.<br>
-      Do NOT use real passwords or credentials.
+      This system is for demo only.<br>
+      Do NOT use real credentials.
     </div>
   </div>
 </div>
 
-<!-- 🔥 HUB -->
 <div id="hub" class="hub">
-
-  <!-- Logout -->
   <div class="top-bar">
     <button class="logout" onclick="logout()">Logout</button>
   </div>
 
-  <!-- Header -->
   <div class="header">
-    <img src="images/logo.png" class="logo">
+    <img src="images/logo.png" class="logo" alt="QXH Logo">
     <h1 class="title">QXH HUB</h1>
     <p class="subtitle">Not Best Script But Cool 😎</p>
   </div>
 
-  <!-- Tabs -->
   <div class="tabs">
-    <button class="tab active" onclick="openTab('scripts', this)">Scripts</button>
-    <button class="tab" onclick="openTab('spoiler', this)">Spoiler</button>
+    <button class="tab active" onclick="openTab('tab-scripts', this)">Scripts</button>
+    <button class="tab" onclick="openTab('tab-spoiler', this)">Spoiler</button>
   </div>
 
-  <!-- Scripts -->
-  <div id="scripts" class="tab-content active fade">
+  <div id="tab-scripts" class="tab-content active fade">
+
+<div class="box-header">
+  🔥 QXH Script
+  <div style="display:flex;gap:8px;align-items:center;">
+    <span class="status online">Online</span>
+    <button class="rbx-btn" onclick="goRoblox('https://www.roblox.com/users/10460976885/profile')">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Roblox_Logo_2022.svg">
+    </button>
+  </div>
+</div>
+
 
     <div class="box">
       <div class="box-header">
-        🔥 Script Main
+        🔥 ULTRA-Rebirt
         <span class="status online">Online</span>
       </div>
-      <code id="s1">loadstring(game:HttpGet("https://example.com/script.lua"))()</code>
-      <button class="btn" onclick="copyText('s1')">Copy Script</button>
+
+      <code id="script1">
+loadstring(game:HttpGet("https://pastebin.com/raw/0HZN0gCy"))()
+      </code>
+
+      <button class="btn" onclick="copyText('script1')">Copy Script</button>
     </div>
 
     <div class="box">
       <div class="box-header">
-        ❌ Script Old
+        🚧 ???
+        <span class="status progress">กำลังพัฒนา</span>
+      </div>
+
+      <code>
+ยังไม่เปิดใช้งาน
+      </code>
+
+      <button class="btn disabled" disabled>Coming Soon</button>
+    </div>
+
+    <div class="box">
+      <div class="box-header">
+        ❌ Script Not Open
         <span class="status offline">Offline</span>
       </div>
-      <code>Script ปิดใช้งาน</code>
+
+      <code>
+Script นี้ปิดใช้งานแล้ว
+      </code>
+
       <button class="btn disabled" disabled>Unavailable</button>
     </div>
 
+    <div class="box">
+      <div class="box-header">
+        📌 Rogue Piece
+        <span class="status planned">อยู่ในแผน</span>
+      </div>
+
+      <code>
+Coming in future update
+      </code>
+
+      <button class="btn disabled" disabled>Planned</button>
+    </div>
+
   </div>
 
-  <!-- Spoiler -->
-  <div id="spoiler" class="tab-content fade">
+  <div id="tab-spoiler" class="tab-content fade">
+
     <div class="box">
-      <div class="box-header">🎬 Spoiler</div>
-      <p class="soon">Coming Soon 🔥</p>
+      <div class="box-header">
+        🎬 Spoiler Script
+        <span class="status online">Preview</span>
+      </div>
+
+      <p class="soon">
+        คลิปสปอย Script ใหม่<br>
+        Coming Soon 🔥
+      </p>
     </div>
+
   </div>
 
 </div>
 
-<script src="script.js?v=50"></script>
+<!-- Script -->
+<script src="script.js?v=1"></script>
 </body>
 </html>
